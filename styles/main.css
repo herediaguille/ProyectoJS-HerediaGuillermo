@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap");
+* {
+  font-family: "Libre Bodoni", serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #FFD46B !important;
+}
+
+body {
+  background-color: #FFE19E;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.banner {
+  overflow: hidden;
+  width: 100%;
+}
+
+footer {
+  background-color: #FFD46B;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 35px;
+}
+
+.footer--responsive {
+  background-color: #FFD46B;
+}
+
+.galeria {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__logo {
+  width: 75px;
+  height: 75px;
+  animation-name: animacion-logo;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+@keyframes animacion-logo {
+  0% {
+    transform: translatex(0px);
+  }
+  50% {
+    transform: translatex(26px);
+  }
+  100% {
+    transform: translatex(0px);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
