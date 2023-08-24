@@ -1,5 +1,13 @@
 import { productos } from "../db/productos.js"
 
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+const agregarAlCarrito = (producto) => {
+    carrito.push(producto);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    
+};
+
 const divProductos = document.getElementById("productos")
 
 let productosDisponibles = JSON.parse(localStorage.getItem("productos"))
@@ -25,6 +33,13 @@ const generarCardsProductos = (productos) => {
         </div>
         `
         divProductos.appendChild(card)
+
+        const btncomprar = document.getElementById(`comprar${id}`);
+        btncomprar.addEventListener("click", () => {
+            agregarAlCarrito(producto);
+            console.log("Producto agregado al carrito:", producto);
+        });
     });
-}
+};
+export { agregarAlCarrito };
 

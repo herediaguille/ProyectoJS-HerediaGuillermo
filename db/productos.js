@@ -50,4 +50,6 @@ export const productos = [
 ];
 
 // carga de productos utilizanso un operador
+//localStorage.clear();
+
 JSON.parse(localStorage.getItem("productos")) || localStorage.setItem("productos", JSON.stringify(productos));
