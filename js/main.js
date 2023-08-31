@@ -37,7 +37,7 @@ const generarCardsProductos = (productos) => {
         const btncomprar = document.getElementById(`comprar${id}`);
         btncomprar.addEventListener("click", () => {
             agregarAlCarrito(producto);
-            console.log("Producto agregado al carrito:", producto);
+            alert("Producto agregado al carrito:", producto);
         });
     });
 };
