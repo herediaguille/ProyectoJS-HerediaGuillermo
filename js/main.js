@@ -5,7 +5,6 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const agregarAlCarrito = (producto) => {
     carrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    
 };
 
 const divProductos = document.getElementById("productos")
@@ -24,13 +23,12 @@ const generarCardsProductos = (productos) => {
         const { id, nombre, imagen, categoria } = producto
         let card = document.createElement("div")
         
-        card.className = "producto"
+        card.className = "producto col-lg-3 col-md-6 text-center"
+
         card.innerHTML = `
-        <div class="col-lg-3 col-md-6 col-sm-6 text-center">
         <img src="${imagen}" alt="${nombre}" class="galeria rounded mx-auto d-block"> 
         <p>${nombre}</p>
-        <button id="comprar${id}" class="btn btn-primary">Comprar</button>
-        </div>
+        <button id="comprar${id}" class="btn btn-primary">Presupuestar</button>
         `
         divProductos.appendChild(card)
 

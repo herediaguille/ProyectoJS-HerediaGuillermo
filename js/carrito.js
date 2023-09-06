@@ -6,24 +6,24 @@ const divCarrito = document.getElementById("carrito");
 
 const mostrarProductosEnCarrito = () => {
     divCarrito.innerHTML = "";
+ 
+    carrito.forEach((producto) => {
 
-    carrito.forEach((productoId) => {
-        //const producto = productos.find(p => p.id === productoId);
-
-        //if (producto) {
             const card = document.createElement("div");
-            card.className = "producto";
+            card.className = "producto col-lg-3 col-md-6 col-sm-6 text-center";
             card.innerHTML = card.innerHTML = `
-            <div class="col-lg-3 col-md-6 col-sm-6 text-center">
-                <img src=".${productoId.imagen}" alt="${productoId.nombre}" class="galeria rounded mx-auto d-block"> 
-                <p>${productoId.nombre}</p>
-            </div>
-        `;
-            divCarrito.appendChild(card);
-//}
+                <img src=".${producto.imagen}" alt="${producto.nombre}" class="galeria rounded mx-auto d-block"> 
+                <p>${producto.nombre}</p>
+                <button id="eliminar${producto.id}" class="btn btn-danger">Eliminar</button>
+            `;
+        divCarrito.appendChild(card);
+        const btnEliminar = document.getElementById(`eliminar${producto.id}`)   
+        
+        btnEliminar.addEventListener("click", () => eliminarDeCarrito)
     });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
     mostrarProductosEnCarrito();
 });
+

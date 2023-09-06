@@ -41,6 +41,10 @@ footer {
   justify-content: space-around;
 }
 
+.producto{
+  margin-bottom: 20px;
+}
+
 .header__logo {
   width: 75px;
   height: 75px;
