@@ -23,6 +23,11 @@ h1 {
   width: 100%;
 }
 
+.form-control{
+  margin-left: 10px;
+  align-items: center;
+}
+
 footer {
   background-color: #FFD46B;
   display: flex;

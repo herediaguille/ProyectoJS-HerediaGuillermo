@@ -35,7 +35,14 @@ const generarCardsProductos = (productos) => {
         const btncomprar = document.getElementById(`comprar${id}`);
         btncomprar.addEventListener("click", () => {
             agregarAlCarrito(producto);
-            alert("Producto agregado al carrito:", producto);
+            
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Producto agregado al carrito',
+                showConfirmButton: false,
+                timer: 1500
+              })
         });
     });
 };
