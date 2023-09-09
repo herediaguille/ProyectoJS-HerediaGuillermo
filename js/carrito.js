@@ -1,5 +1,3 @@
-import { productos } from "../db/productos.js";
-
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const divCarrito = document.getElementById("carrito");
@@ -59,7 +57,6 @@ const eliminarDeCarrito = (id) => {
             'De acuerdo'
           )
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
@@ -70,6 +67,30 @@ const eliminarDeCarrito = (id) => {
         }
       })
 }; 
+
+//Fucion para finalizar pedido
+
+const btnFinalizar = document.getElementById(`btn--finalizar`)
+
+btnFinalizar.addEventListener("click", async () => {
+  const { value: email } = await Swal.fire({
+    title: 'Ingrese su email y nos contactaremos',
+    input: 'email',
+    inputLabel: 'Correo electrónico',
+    inputPlaceholder: 'Enter your email address'
+  })
+  
+  if (email) {
+    Swal.fire(`Le enviaremos el presupuesto al siguiente E-mail: ${email}`)
+    const limpiarCarrito = () => {
+      carrito.length = 0;
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      mostrarProductosEnCarrito();
+    };
+    limpiarCarrito();
+  }
+}
+);
 
 
 
